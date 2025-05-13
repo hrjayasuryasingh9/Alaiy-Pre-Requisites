@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: monospace;
+      }
+
+      header,
+      footer {
+        background-color: #0e0e0e;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        background-image: url("https://raw.githubusercontent.com/RVCC-IDMX/style-stage-ericbrown8787/219962e8bec57cbe719315ecc4a24e6c62ac2c2f/circuits.svg");
+      }
+      body {
+        background-color: #060606;
+        background-attachment: fixed;
+        background-repeat: repeat;
+        background-image: url("https://raw.githubusercontent.com/RVCC-IDMX/style-stage-ericbrown8787/219962e8bec57cbe719315ecc4a24e6c62ac2c2f/gears.svg");
+      }
+      header .Main-heading {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+      }
+      header .Main-heading h1 {
+        color: #ffbb00;
+        font-size: clamp(4rem, 25vw, 12rem);
+        max-width: 510px;
+      }
+      header .Main-heading h1 span {
+        font-size: clamp(4rem, 25vw, 12rem);
+        color: #b12292;
+      }
+      header .Main-heading p {
+        position: relative;
+        max-width: 603px;
+        font-size: clamp(2rem, 7vw, 3rem);
+        color: #ffbb00;
+        font-weight: 600;
+        padding: clamp(30px, 7vw, 50px) clamp(30px, 7vw, 300px);
+      }
+      header .Main-heading p span {
+        color: #b12292;
+      }
+      header .Main-heading div {
+        margin: 20px;
+        padding: 20px 50px;
+        background-color: #b12292;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+      }
+      .nav ul,
+      footer ul {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 10px;
+      }
+      .nav ul li,
+      footer ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 220px;
+        padding: 0px 10px;
+      }
+      .nav ul li span,
+      footer ul li span {
+        display: block;
+        font-weight: 600;
+        font-size: 30px;
+        color: #b12292;
+      }
+      .nav ul li p,
+      footer ul li p {
+        color: white;
+        font-size: 22px;
+        padding: 5px 2px;
+        transition: all 0.2s ease-in-out;
+      }
+      .nav ul li p:hover,
+      footer ul li p:hover {
+        padding: 0px 20px;
+        color: #ffbb00;
+      }
+      .Divider {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .second-section,
+      .third-part,
+      .fourth-part,
+      .Fifth-part,
+      .side-first-section {
+        padding: 10px;
+        max-width: 1000px;
+      }
+
+      .second-section h1,
+      .third-part h1,
+      .fourth-part h1,
+      .Fifth-part h1 {
+        width: fit-content;
+        font-size: clamp(25px, 6vw, 40px);
+        font-weight: 600;
+        border-bottom: 3px dashed #b12292;
+        color: #ffbb00;
+        margin: 20px 10px;
+      }
+      .second-section p,
+      .third-part p,
+      .fourth-part p,
+      .Fifth-part p,
+      .side-first-section p,
+      .side-second-section p,
+      footer p {
+        line-height: 2.5rem;
+        font-size: clamp(20px, 3vw, 25px);
+        color: white;
+        margin: 10px 20px;
+        padding-bottom: 30px;
+      }
+      .second-section p span,
+      .fourth-part p span {
+        color: #ffbb00;
+        font-weight: 600;
+      }
+      .second-section div {
+        background-color: #1e1e1e;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 1000px;
+        margin: 10px;
+      }
+      .second-section div p {
+        padding-bottom: 0px;
+      }
+      .third-part ul p {
+        padding: clamp(4px, 0vw, 10px);
+        margin: 0px;
+      }
+      .third-part ul {
+        padding: 10px 25px;
+      }
+      .button-line {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .button-line div {
+        min-width: 230px;
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+        padding: 20px;
+        background-color: #b12292;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+      }
+      .Division-2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: fit-content;
+      }
+      .side-first-section,
+      .side-second-section {
+        padding-top: 40px;
+        width: 300px;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .side-first-section h1,
+      .side-second-section h1 {
+        font-size: clamp(25px, 1.3vw, 40px);
+        font-weight: 600;
+        border-bottom: 3px dashed #b12292;
+        color: #ffbb00;
+        margin: 20px 10px;
+      }
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="Main-heading">
+        <h1>Style Stage<span>{</span></h1>
+        <p>
+          A modern CSS showcase styled by community contributions<br />
+          <span>}</span>
+        </p>
+        <div>star on github</div>
+        <p
+          class="ending"
+          style="
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+            max-width: 2000px;
+            padding: 0px;
+          "
+        >
+          Maintained by Stephanie Eckles of ModernCSS.dev
+        </p>
+      </div>
+    </header>
+    <div class="nav">
+      <ul>
+        <li>
+          <span>{</span>
+          <p>About</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Guidelines</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Contribute</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Files</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>All Styles</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Resources</p>
+          <span>}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="Divider">
+      <div class="division-1">
+        <div class="second-section">
+          <h1>Setting The Stage :</h1>
+          <p>
+            In 2003,<strong> Dave Shea </strong>began a legendary project called
+            <strong> CSS Zen Garden</strong> that provided a demonstration of
+            "what can be accomplished through CSS-based design" until
+            submissions stopped in 2013.
+          </p>
+          <p>
+            <span>Style Stage </span> seeks to rekindle that spirit by providing
+            this page as the base HTML for contributors - like you! - to
+            re-style by submitting an alternate stylesheet.
+          </p>
+          <div>
+            <p>
+              <span>How it works: </span><br />
+              Visit the <strong>"All Styles"</strong> directory page and select
+              a style to view. A page with identical content to this one will be
+              presented with a new design provided from a contributed
+              stylesheet. CSS practitioners of any skill level are invited to
+              <strong>submit a stylesheet!</strong>
+            </p>
+          </div>
+          <p>
+            The HTML for this page was created to be semantic, accessible, and
+            free of nearly all other opinions. Nested sectioning elements with
+            the class `.container` serve as additional style aids since you do
+            not have access to alter the base HTML. IDs are included where
+            needed for nav anchors or accessibility, and a small number of
+            additional classes are provided for key elements without IDs. Don't
+            forget the `.skip-link`!
+          </p>
+        </div>
+        <div class="third-part">
+          <h1>Modern CSS Under the Spotlight:</h1>
+          <p>
+            Modern CSS has increased and improved the available CSS properties
+            and layout behaviors, and browser support is nearly in sync for most
+            high-touch features.
+          </p>
+          <p>Some examples of modern CSS include:</p>
+          <ul>
+            <li><p>+ Flexbox</p></li>
+            <li><p>+ Grid</p></li>
+            <li><p>+ custom variables</p></li>
+            <li><p>+ @supports()</p></li>
+            <li><p>+ gradients</p></li>
+            <li><p>+ animation</p></li>
+            <li><p>+ 3D transforms</p></li>
+            <li><p>+ object-fit</p></li>
+            <li><p>+ :focus-within</p></li>
+            <li><p>+ calc()</p></li>
+            <li><p>+ min() / max() / clamp()</p></li>
+            <li><p>+ viewport units</p></li>
+            <li><p>+ scroll-(margin/padding/snap)</p></li>
+            <li><p>+ position: sticky</p></li>
+            <li><p>+ two-value display</p></li>
+            <li><p>+ expanded media query values</p></li>
+            <li><p>+ variable fonts</p></li>
+          </ul>
+          <p>
+            We also collectively have an improved understanding of what it takes
+            to make accessible experiences.
+          </p>
+          <p>
+            <strong>Join Style Stage</strong> as a contributor to refresh your
+            CSS skills, and learn from others!
+          </p>
+        </div>
+        <div class="fourth-part">
+          <h1>Guidelines:</h1>
+          <p>
+            Contributing a stylesheet to Style Stage means you agree to abide by
+            <strong>our full guidelines.</strong>
+          </p>
+          <p><span>TL;DR:</span></p>
+          <p>
+            All submissions will be autoprefixed and prepended with the CC
+            BY-NC-SA license as well as attribution using the metadata you
+            provide. You may use any build setup you prefer, but the final
+            submission should be the compiled, unminified CSS. You retain the
+            copyright to original graphics and must ensure all graphics used are
+            appropriately licensed. All asset links, including fonts, must be
+            absolute to external resources. Stylesheets will be saved into the
+            Github repo, and detected changes that violate the guidelines are
+            cause for removal.
+          </p>
+          <p>
+            Ensure your design is responsive, and that it passes accessible
+            contrast (we'll be using aXe to verify). Animations should be
+            removed via `prefers-reduced-motion`. Cutting-edge techniques should
+            come with a fallback if needed to not severely impact the user
+            experience. No content may be permanently hidden, and hidden items
+            must come with an accessible viewing technique. Page load time
+            should not exceed 3 seconds.
+          </p>
+          <p>
+            Most importantly - have fun and learn something new! Check out the
+            <strong>resources</strong> for tips and inspiration.
+          </p>
+          <div class="button-line"><div>Review full Guidelines</div></div>
+        </div>
+        <div class="Fifth-part">
+          <h1>Contribute</h1>
+          <p>
+            All who enjoy the craft of writing CSS are welcome to contribute!
+          </p>
+          <p>
+            By participating as a contributor, your work will be shared with
+            your provided attribution as long as Style Stage is online, your
+            stylesheet link and any asset links remain valid, and all
+            <strong>contributor guidelines</strong>
+            are adhered to.
+          </p>
+          <h1>Steps to Contribute</h1>
+          <ol>
+            <li>
+              <p>
+                <span>1.</span>
+                Download the source files listed below to use as a reference to
+                build your stylesheet, or start from the Sass template.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span>2.</span>
+
+                Host your completed stylesheet at a public URL, and ensure all
+                asset links are absolute URLs to external resources.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span>3.</span>
+
+                Create a pull request to add your information as a unique .json
+                file to: src/_data/styles. The schema is detailed in the repo
+                README, and you can review the FAQ on creating a pull request.
+              </p>
+            </li>
+            <li>
+              <p>
+                <span>4.</span>
+
+                If your contribution abides by the previously listed guidelines,
+                your submission will be added!
+              </p>
+            </li>
+          </ol>
+          <h1>Source Files</h1>
+          <div class="button-line">
+            <div>Download HTML</div>
+            <div>Download CSS</div>
+            <div>Fort The CodePen</div>
+          </div>
+        </div>
+      </div>
+      <div class="Division-2">
+        <div class="side-first-section">
+          <h1>Currently Staged Style</h1>
+          <p>Title: Atomic Clock</p>
+          <p>Author: Eric Brown</p>
+          <div class="button-line">
+            <div>View Stylesheet</div>
+          </div>
+        </div>
+        <div class="side-second-section">
+          <h1>Featured Styles</h1>
+          <p>Moccasin Stage by Gabriel Paixao</p>
+          <p>Color Stages by Claire Lipskey</p>
+          <p>Artsy Blue and Turquoise by Thea Kitzinger</p>
+          <div class="button-line">
+            <div>View all styles</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Created and maintained by Stephanie Eckles (@5t3ph)</p>
+      <ul>
+        <li>
+          <span>{</span>
+          <p>About</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Guidelines</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Contribute</p>
+          <span>}</span>
+        </li>
+        <li>
+          <span>{</span>
+          <p>Files</p>
+          <span>}</span>
+        </li>
+      </ul>
+      <p>
+        Crafted with semantic, accessible HTML and CSS,<span>
+          Style Stage
+        </span>
+        generated with 11ty and hosted on Netlify. This project uses PostCSS
+        with autoprefixer.
+      </p>
+      <p>
+        Contributors retain copyright of all graphics used, and styles are
+        available under CC BY-NC-SA
+      </p>
+    </footer>
+  </body>
+</html>
