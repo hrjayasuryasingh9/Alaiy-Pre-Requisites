@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #262734;
+      }
+      .Skills {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #262734;
+        padding: 30px 10px;
+      }
+      .Skills .Skill-name {
+        color: white;
+        text-align: center;
+      }
+      .Skill-data {
+        max-width: 1000px;
+        text-align: center;
+        padding: 10px 10px;
+        color: #7e808a;
+        font-size: 18px;
+      }
+      .Skills ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+        flex-wrap: wrap;
+        margin: 20px;
+      }
+      .Skills ul li {
+        display: block;
+        padding: 10px;
+        width: fit-content;
+        border: 3px dotted #7e808a;
+        margin: 10px;
+        font-size: 20px;
+        color: white;
+      }
+      .projects {
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 0px;
+      }
+      .projects .project {
+        width: 300px;
+        height: 350px;
+        padding: 8px;
+        /* background-color: #333646; */
+        border: 3px dashed white;
+        margin: 20px;
+        cursor: pointer;
+      }
+      .projects .project .Image {
+        width: 100%;
+        height: 200px;
+      }
+      .projects .project h1 {
+        padding: 5px 0px;
+        font-size: 25px;
+        color: white;
+      }
+      .projects .project p {
+        color: #7e808a;
+      }
+      .Link-To-home {
+        color: #ffc255;
+        font-size: 20px;
+        border-bottom: 2px solid #ffc255;
+        cursor: pointer;
+        margin-bottom: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Skills" id="Skills"></div>
+    <script src="./script.js"></script>
+    <script>
+      window.onload = () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const s = urlParams.get("skill");
+        const skills = document.getElementById("Skills");
+        if (s == "frontend") {
+          skills.innerHTML = `
+    <h1 class="Skill-name">Frontend Web Development</h1>
+      <p class="Skill-data">
+        As a frontend developer with over a year of experience, I’ve built
+        responsive and interactive websites for various clients. I specialize in
+        modern frontend technologies like React, Tailwind CSS, Zustand, and
+        DaisyUI to craft seamless user experiences. My focus is on delivering
+        clean, efficient, and user-friendly interfaces that add real value to
+        client products.
+      </p>
+      <p class="Skill-data">I majorly honed my skills with the below things:</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JAVASCRIPT</li>
+        <li>React.js</li>
+        <li>Tailwind</li>
+        <li>Bootstrap</li>
+        <li>ShadCN</li>
+        <li>DaisyUI</li>
+        <li>Zustand</li>
+      </ul>
+      <h1 class="Skill-name">Major Projects</h1>
+      <div class="projects">
+        <div
+          class="project"
+          onClick="window.open('https://tourmaline-pastelito-933144.netlify.app/', '_blank')"
+        >
+          <img src="./Assets/Ecomerece Website.png" alt="" class="Image" />
+          <h1>Ecommerce Platform</h1>
+          <p>
+            Frontend developer with 1+ year of experience creating responsive,
+            user-friendly websites using React, Tailwind CSS, Zustand, and
+            DaisyUI.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://hrjayasuryasingh9.github.io/JTD/E-commerce%20website/#home', '_blank')"
+        >
+          <img
+            src="./Assets/ANother Ecommerce Website.png"
+            alt=""
+            class="Image"
+          />
+          <h1>Fashion Store</h1>
+          <p>
+            E-commerce site built with HTML, CSS, JS, and Bootstrap. Clean
+            design and smooth shopping experience.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://venerable-madeleine-6db7d3.netlify.app/', '_blank')"
+        >
+          <img src="./Assets/Movie Browsing Website.png" alt="" class="Image" />
+          <h1>Movie Search App</h1>
+          <p>
+            Built a movie search app with React, TypeScript, and Tailwind CSS
+            using the OMDB API. Includes instant search, infinite scroll, and
+            responsive UI.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://hrjayasuryasingh9.github.io/JTD/Personal%20Finance%20Tracker/', '_blank')"
+        >
+          <img
+            src="./Assets/Personal Finance Tracker .png"
+            alt=""
+            class="Image"
+          />
+          <h1>Finance Tracker</h1>
+          <p>
+            Modern personal finance tracker built with HTML, CSS, Bootstrap, and
+            JavaScript. Includes a dynamic budget calculator and persistent
+            storage via Local Storage.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://hrjayasuryasingh9.github.io/JTD/To-Do%20list/', '_blank')"
+        >
+          <img src="./Assets/TODO LIST.png" alt="" class="Image" />
+          <h1>To-D0 List</h1>
+          <p>
+            Built a responsive To-Do App with HTML, CSS, and JavaScript.
+            Features task add, edit, delete, and persistent storage using Local
+            Storage.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://hrjayasuryasingh9.github.io/FrontEnd/Weather%20App/', '_blank')"
+        >
+          <img src="./Assets/weatherapp.png" alt="" class="Image" />
+          <h1>Weather app</h1>
+          <p>
+            Built a weather app with HTML, CSS, JavaScript, Vite, and
+            WeatherAPI. Shows real-time weather based on user location using
+            Geolocation.
+          </p>
+        </div>
+      </div>
+      <p class="Link-To-home" onclick="window.location.href='index.html'">
+        Back To Home <i class="fa-solid fa-arrow-right"></i>
+      </p>
+    `;
+        } else if (s == "backend") {
+          skills.innerHTML = `
+    <h1 class="Skill-name">Backend Web Development</h1>
+      <p class="Skill-data">
+As a backend developer with over a year of experience, I’ve built robust and scalable server-side applications for various clients. I specialize in modern backend technologies like Node.js, Express, MongoDB, and PostgreSQL to create reliable and efficient systems. My focus is on writing clean, maintainable code and building APIs that power seamless user experiences and drive real value to client products
+      </p>
+      <p class="Skill-data">I majorly honed my skills with the below things:</p>
+      <ul>
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>Prisma</li>
+        <li>Mangodb</li>
+        <li>PostgreSQL</li>
+        <li>Socket.io</li>
+        <li>NodeMailer</li>
+        <li>Jsonwebtoken</li>
+        <li>Bcrypt</li>
+      </ul>
+      <h1 class="Skill-name">Major Projects</h1>
+      <div class="projects">
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/E-Commerce-App-JTD/tree/main', '_blank')"
+        >
+          <img src="https://i.pinimg.com/originals/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.png" alt="" class="Image" />
+          <h1>Ecommerce Backend</h1>
+          <p>
+            Backend developer skilled in building secure e-commerce systems using Node.js, Express, PostgreSQL, and JWT for smooth API and data handling
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/Chatz-application-full-stack', '_blank')"
+        >
+          <img
+            src="https://i.pinimg.com/originals/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.png"
+            alt=""
+            class="Image"
+          />
+          <h1>Chat Application</h1>
+          <p>
+Backend developer experienced in creating real-time chat apps using Node.js, Express, and Socket.io for smooth messaging and user handling
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/JTD-BackEnd/blob/main/backend/Backend.js', '_blank')"
+        >
+          <img src="https://i.pinimg.com/originals/1c/54/f7/1c54f7b06d7723c21afc5035bf88a5ef.png" alt="" class="Image" />
+          <h1>Library Management</h1>
+          <p>
+Backend developer with experience in building library systems using Node.js, Express, and PostgreSQL, handling users, books, and APIs.
+          </p>
+        </div>
+      </div>
+      <p class="Link-To-home" onclick="window.location.href='index.html'">
+        Back To Home <i class="fa-solid fa-arrow-right"></i>
+      </p>`;
+        } else if (s == "fullstack") {
+          skills.innerHTML = `
+    <h1 class="Skill-name">Full Stack Web Development</h1>
+      <p class="Skill-data">
+As a full stack developer, I’ve built responsive and feature-rich web applications using the PERN stack (PostgreSQL, Express.js, React, Node.js). I specialize in crafting seamless user experiences on the frontend with React and Tailwind CSS, while building robust and scalable backend services with Express and PostgreSQL. My focus is on delivering clean, efficient, and maintainable full-stack solutions that drive real value for users and clients.
+      </p>
+      <p class="Skill-data">I majorly honed my skills with the below things:</p>
+      <ul>
+        <li>Frontend Web development</li>
+        <li>PERN Stack</li>
+        <li>Backend web development</li>
+      </ul>
+      <h1 class="Skill-name">Major Projects</h1>
+      <div class="projects">
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/E-Commerce-App-JTD/tree/main', '_blank')"
+        >
+          <img
+            src="./Assets/image.png"
+            alt=""
+            class="Image"
+          />
+          <h1>Ecommerce Website</h1>
+          <p>
+Full stack e-commerce platform using the PERN stack with user auth, cart system, and a seller panel to manage products and orders.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/Chatz-application-full-stack', '_blank')"
+        >
+          <img src="./Assets/Screenshot 2025-05-14 203904.png" alt="" class="Image" />
+          <h1>Chatz</h1>
+          <p>
+           Real-time chat application built with the PERN stack, featuring user authentication, direct messaging, and group chats.
+          </p>
+        </div>
+        <div
+          class="project"
+          onClick="window.open('https://github.com/hrjayasuryasingh9/Alaiy-Assignment', '_blank')"
+        >
+          <img src="./Assets/Screenshot 2025-05-14 203342.png" alt="" class="Image" />
+          <h1>Stepzo</h1>
+          <p>
+Built a full-stack shoes e-commerce platform with React, Zustand, Node.js, Express, and MongoDB, featuring product listings, cart, checkout, and user authentication.
+          </p>
+        </div>
+      </div>
+      <p class="Link-To-home" onclick="window.location.href='index.html'">
+        Back To Home <i class="fa-solid fa-arrow-right"></i>
+      </p>`;
+        }
+      };
+    </script>
+  </body>
+</html>

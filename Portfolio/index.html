@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      header {
+        padding: 50px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #333646;
+        flex-wrap: wrap;
+        /* height: 0vh; */
+      }
+      header .Image-div {
+        padding: 20px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      header .Image-div .Image {
+        width: 400px;
+        height: 400px;
+        background-image: url(./Assets/re.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+      }
+      header .Content-div {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .Content-div div ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        list-style: none;
+        padding: 40px 0px;
+        /* padding-bottom: 100px; */
+      }
+      .Content-div div ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 400;
+        transition: all 0.3s ease-in-out;
+      }
+      .Content-div div ul li a:hover {
+        color: #ffc255;
+      }
+      .Content-div h1 {
+        font-size: 45px;
+        color: white;
+        padding: 10px 0px;
+      }
+      .Content-div h2,
+      .contact-info h1,
+      .Experience h1 {
+        padding: 10px 0px;
+        font-size: 30px;
+        color: white;
+        min-width: 300px;
+        max-width: 300px;
+        font-weight: 600;
+      }
+      .Content-div p,
+      .contact-info p,
+      .Experience p {
+        color: #7e808a;
+        padding: 10px 0px;
+        min-width: 300px;
+        max-width: 500px;
+        font-size: 20px;
+      }
+      .Content-div ul {
+        padding: 20px 0px;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .Content-div ul li a {
+        color: white;
+        font-size: 30px;
+        transition: all 0.3s ease-in-out;
+      }
+      .Content-div ul li a:hover {
+        color: #ffc255;
+      }
+      .Content-div ul li {
+        list-style: none;
+      }
+
+      .Content-div .work {
+        padding: 20px 0px;
+        color: #ffc255;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+      .Content-div .work:hover,
+      .contact-info .work:hover {
+        padding-left: 10px;
+      }
+      .Content-div .work i,
+      .contact-info .work i,
+      .skill a i {
+        padding: 0px 20px;
+      }
+      @media (max-width: 400px) {
+        header .Image-div .Image {
+          height: 350px;
+          width: 350px;
+        }
+      }
+
+      .contact {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 60px 20px;
+        width: 100%;
+        background-color: #262734;
+        flex-wrap: wrap;
+      }
+      .contact div {
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .contact-info .work {
+        padding: 50px 0px;
+        color: #ffc255;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+        font-weight: 200;
+        width: 300px;
+      }
+      .Experience h1 {
+        max-width: 500px;
+      }
+      .Experience ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 500px;
+      }
+      .Experience ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .Experience ul li span {
+        font-size: 100px;
+        color: #ffc255;
+        font-weight: 400;
+      }
+      .Experience ul li h3 {
+        font-size: 20px;
+        width: 100px;
+        color: white;
+        font-weight: 400;
+      }
+      .skills {
+        padding: 50px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        background-color: #333646;
+        flex-wrap: wrap;
+      }
+      .skills-div {
+        padding: 30px 10px;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .skills-div .skill {
+        background-color: #424758;
+        width: 300px;
+        height: 320px;
+        margin: 20px;
+        transition: all 0.3s ease-in-out;
+      }
+      .skills-div .skill:hover {
+        background-color: #ffc255;
+      }
+      .skills .p-div {
+        color: #7e808a;
+        padding: 0px 0px;
+        width: 70%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: flex-start;
+        font-size: 20px;
+      }
+      .skill p {
+        font-size: 40px;
+        font-weight: 400;
+        color: rgb(255, 255, 255);
+        padding: 20px 20px;
+      }
+      .skill a {
+        padding: 30px;
+        font-size: 20px;
+        color: white;
+      }
+      .skill div span {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 30px;
+      }
+      .skill div span i {
+        text-align: center;
+        font-size: 60px;
+        color: white;
+      }
+      .end {
+        background-color: #333646;
+        padding: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .end .fa-face-smile {
+        color: #ffc255;
+        font-size: 70px;
+        padding: 30px;
+      }
+      .end p {
+        color: white;
+        text-align: center;
+        padding-bottom: 10px;
+      }
+      .end ul {
+        padding: 20px 0px;
+        width: 150px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .end ul li a {
+        color: white;
+        font-size: 30px;
+        transition: all 0.3s ease-in-out;
+      }
+      .end ul li a:hover {
+        color: #ffc255;
+      }
+      .end ul li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="Image-div">
+        <div class="Image"></div>
+      </div>
+      <div class="Content-div">
+        <div>
+          <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Works</a></li>
+          </ul>
+        </div>
+        <p><i class="fa-solid fa-arrow-right"></i> Introduction</p>
+        <h1>I'am Jaya Surya</h1>
+        <h2>Software and Web developer, based in Banglore</h2>
+        <p>
+          I can create a visually appealing, responsive, and user-friendly
+          website that not only showcases your product but also adds real value
+          by attracting users, boosting engagement, and increasing conversions.
+        </p>
+        <ul>
+          <li>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+          </li>
+        </ul>
+        <a href="" class="work"
+          >My Works <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </div>
+    </header>
+    <div class="contact">
+      <div class="contact-info">
+        <p><i class="fa-solid fa-arrow-right"></i> Contact</p>
+        <h1>Any Type Of Query & Discussion.</h1>
+        <p>Just Send me a mail to below give gmail so that we can catchup</p>
+        <!-- <h4>hrjayasuryasingh@gmail.com</h4> -->
+        <h4 class="work">
+          hrjayasurya@gmail.com <i class="fa-solid fa-arrow-right"></i>
+        </h4>
+      </div>
+      <div class="Experience">
+        <h1>
+          You can't use up creativity, the more you use, more you have in your
+          signifant mind
+        </h1>
+        <p>
+          With over a year of hands-on experience, I've successfully built and
+          delivered custom websites and web applications for multiple clients.
+          My focus has always been on creating responsive, user-friendly, and
+          visually appealing solutions that meet client goals and enhance user
+          engagement.
+        </p>
+        <ul>
+          <li>
+            <span>1</span>
+            <h3>Years of Experience</h3>
+          </li>
+          <li>
+            <span>7</span>
+            <h3>Satisfied clients</h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="p-div">
+        <p><i class="fa-solid fa-arrow-right"></i> Skills & Services</p>
+        <h1></h1>
+      </div>
+      <div class="skills-div">
+        <div class="skill" onclick="gotoprojects('frontend');">
+          <div>
+            <span><i class="fa-brands fa-uikit"></i></span>
+          </div>
+          <p>Frontend Web Development</p>
+          <a onclick="gotoprojects('frontend');"
+            >Over 10+ Projects <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="skill" onclick="gotoprojects('backend');">
+          <div>
+            <span><i class="fa-solid fa-cloud"></i></span>
+          </div>
+          <p>Backend Web Development</p>
+          <a onclick="gotoprojects('backend');"
+            >Over 3+ Projects <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="skill" onclick="gotoprojects('fullstack');">
+          <div>
+            <span><i class="fa-solid fa-globe"></i></span>
+          </div>
+          <p>FullStack Web Development</p>
+          <a onclick="gotoprojects('fullstack');"
+            >Over 3+ Projects <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="end">
+      <i class="fa-solid fa-face-smile"></i>
+      <p><strong>Thanks for scrolling.</strong>Explore my projects</p>
+      <ul>
+        <li>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-github"></i></a>
+        </li>
+      </ul>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
